@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{
+
+    --blanco:  rgb(245, 249, 252); 
+    --lila:rgb(229, 108, 240);
+    --celeste:rgb(109, 177, 236);
+    --azul:rgb(98, 20, 243);
+    --verde:rgb(35, 241, 45);
+    --fuente: "Roboto", sans-serif;
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: linear-gradient(to bottom,var(--lila),var(--verde));
+    height: 100vh;
+    font-family: var(--fuente);
+}
+
+.contenedor{
+    
+    width: 400px;
+    margin: 0 auto;
+    max-width: 80%;
+}
+.perfil{
+    color: var(--blanco);
+    
+}
+.perfil span{
+    letter-spacing: 1px;
+}
+.agregar_tarea{
+    background-color: var(--blanco);
+    height: 70px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 70px;
+    padding: 10px;
+    margin: 40px 0;
+}
+.input-agregar-tarea{
+    background: var(--blanco);
+    border: none;
+    height: 100%;
+    width: 100%;
+}
+.icono-input{
+    font-size: 50px;
+    color: var(--lila);
+    
+}
+.icono-input:hover{
+    transform: scale(1.1);
+}
