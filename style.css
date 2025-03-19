@@ -60,3 +60,47 @@ body{
 .icono-input:hover{
     transform: scale(1.1);
 }
+
+.input-agregar-tarea::placeholder{
+    font-size: 16px; 
+    color: var(--lila);
+    padding: 10px;
+}
+.h3{
+    color: var(--blanco);
+    margin-top: 20px; margin-bottom: 20px;
+}
+li{
+    background: linear-gradient(to bottom,var(--azul),var(--verde));
+    border-radius: 15px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 5px 0;
+   
+}
+.check{
+    font-size: 25px;
+    color: var(--blanco);
+}
+
+.check:hover{
+    color: var(--celeste);
+    cursor: pointer;
+}
+
+.borrar{
+    font-size: 25px;
+    color: var(--blanco);
+}
+
+.borrar:hover{
+    color: var(--celeste);
+    cursor: pointer;
+}
+
+.tachado{
+    color: var(--lila);
+    text-decoration: line-through 2px;
+}
