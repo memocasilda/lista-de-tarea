@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Tektur:wght@400..900&display=swap');
+:root{
+
+    --blanco:  rgb(31, 147, 236); 
+    --lila:rgb(0, 0, 0);
+    --celeste:rgb(93, 11, 247);
+    --azul:rgb(241, 240, 245);
+    --verde:rgb(35, 241, 45);
+    --fuente: "Tektur", sans-serif;
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: linear-gradient(to bottom,var(--lila),var(--verde));
+    height: 100vh;
+    font-family: var(--fuente);
+}
+
+.contenedor{
+    
+    width: 400px;
+    margin: 0 auto;
+    max-width: 80%;
+}
+.perfil{
+    color: var(--blanco);
+    
+}
+.perfil span{
+    letter-spacing: 1px;
+}
+.agregar_tarea{
+    background-color: var(--blanco);
+    height: 70px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 70px;
+    padding: 10px;
+    margin: 40px 0;
+}
+.input-agregar-tarea{
+    background: var(--blanco);
+    border: none;
+    height: 100%;
+    width: 100%;
+}
+.icono-input{
+    font-size: 50px;
+    color: var(--lila);
+    
+}
+.icono-input:hover{
+    transform: scale(1.1);
+}
+
+.input-agregar-tarea::placeholder{
+    font-size: 16px; 
+    color: var(--lila);
+    padding: 10px;
+}
+.h3{
+    color: var(--azul);
+    margin-top: 20px; margin-bottom: 20px;
+}
+li{
+    background: linear-gradient(to bottom,var(--azul),var(--verde));
+    border-radius: 15px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 5px 0;
+   
+}
+.check{
+    font-size: 25px;
+    color: var(--blanco);
+}
+
+.check:hover{
+    color: var(--celeste);
+    cursor: pointer;
+}
+
+.borrar{
+    font-size: 25px;
+    color: var(--blanco);
+}
+
+.borrar:hover{
+    color: var(--celeste);
+    cursor: pointer;
+}
+
+.tachado{
+    color: var(--lila);
+    text-decoration: line-through 2px;
+}

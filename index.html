@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style2.css">
     <title>Ingresar Datos</title>
 </head>
 <body>
@@ -19,14 +19,14 @@
 
             </span>
         </div>
-        <div class="agregar_tarea" id="agregar_tarea">
-            <input type="text" placeholder="agregar una tarea" class="input-agregar-tarea">
-            <i class="fas fa-plus-circle icono-input"></i>
+        <div class="agregar_tarea" >
+            <input type="text" placeholder="agregar una tarea" class="input-agregar-tarea" id="agregar_tarea">
+            <i class="fas fa-plus-circle icono-input" id="agregar"></i>
         </div>
         <div class="lista" id="lista">
             <h3>“estas son tus tareas pendientes”
             </h3>
-            <ul>
+            <ul id="lista2">
                 <li>
                     <i class="fas fa-circle co check" id="check" data-="check"></i>
                     <p class="tarea tachado" id="tarea">guillermo</p>
@@ -38,5 +38,8 @@
         
 
     </div>
+    <script src="main.js">
+
+    </script>
 </body>
 </html>
