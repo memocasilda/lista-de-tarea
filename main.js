@@ -23,3 +23,24 @@ if (tarea) {
 }
 input.value = "";
 })
+
+// llamar a la función apretando enter
+
+document.addEventListener("keyup", (e) => {
+    if(e.key == 'Enter'){
+        const tarea = input.value 
+if (tarea) {
+    agregarTarea(tarea)
+}
+input.value = "";
+    }
+}
+
+)
+
+const cambiarEstilo = () => {
+    const link = document.getElementById("style");
+    link.href = link.href.includes("style.css") ? "style2.css" : "style.css";
+
+};
+
