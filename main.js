@@ -13,6 +13,7 @@ let id=0;
 
 const fechaActual = new Date();
 fecha.innerHTML= fechaActual.toLocaleDateString('es-AR', {
+year: 'numeric',
 weekday:'long',
 month:'long',
 day:'numeric',
