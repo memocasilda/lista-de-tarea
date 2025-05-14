@@ -10,6 +10,7 @@ const pendiente = 'fa-circle';
 const tachado = 'tachado';
 
 let id=0;
+let LIST = [];
 
 const fechaActual = new Date();
 fecha.innerHTML= fechaActual.toLocaleDateString('es-AR', {
@@ -26,9 +27,9 @@ const agregarTarea = (tarea,check,eliminado,id) => {
     const tachar = check ? tachado : "";
 
     const elemento = `<li>
-                    <i class="far ${estado} check" id="check${id}" data="check"></i>
+                    <i class="far ${estado} check" id="${id}" data="check"></i>
                     <p class="tarea ${tachar}" >${tarea}</p>
-                    <i class="fas fa-trash de borrar" id="borrar${id}" data="borrar"></i>
+                    <i class="fas fa-trash de borrar" id="${id}" data="borrar"></i>
                 </li>`
                 lista.insertAdjacentHTML("beforeend", elemento);
 };
@@ -37,6 +38,12 @@ const tareaRealizada = (element) => {
     element.classList.toggle (hecho);
     element.classList.toggle (pendiente);
     element.parentNode.querySelector('.tarea').classList.toggle(tachado);
+
+    LIST[element.id].check = !LIST[element.id].check;
+
+    console.log(LIST[element.id]);
+
+
     };
 
     const tareaEliminada = (element) => {
@@ -59,11 +66,26 @@ const cambiarEstilos = () => {
 
 mas.addEventListener('click', () => {
 const tarea = input.value 
-if (tarea) {
-    agregarTarea(tarea,false,false,id);
-    id++;
+if (tarea.length > 20){
+    alert("La tarea no puede tener más de 20 caracteres.");
+    return;
 }
+
+    if(tarea){
+
+    agregarTarea(tarea,false,false,id);
+    LIST.push({
+        id: id,
+        check: false,
+        tarea: tarea,
+        eliminado: false
+    });
+    localStorage.setItem("GUARDADO", JSON.stringify(LIST));
+    id++;
+
 input.value = "";
+console.log(LIST)
+    }
 })
 
 // llamar a la función apretando enter
@@ -73,6 +95,13 @@ document.addEventListener("keyup", (e) => {
         const tarea = input.value 
 if (tarea) {
     agregarTarea(tarea,false,false,id);
+    LIST.push({
+        id: id,
+        check: false,
+        tarea: tarea,
+        eliminado: false
+    });
+    localStorage.setItem("GUARDADO", JSON.stringify(LIST));
     id++;
 }
 input.value = "";
@@ -91,8 +120,24 @@ lista.addEventListener('click', function (event){
     else if (elementData =='borrar'){
         tareaEliminada (element)
     }
+    localStorage.setItem("GUARDADO", JSON.stringify(LIST));
 
 }
 );
 
+let data = localStorage.getItem("GUARDADO")
+if (data){
+    LIST = JSON.parse(data);
+    console.log(LIST);
+    id = LIST.length
+    cargarLista(LIST)
+}else{
+    LIST = [];
+    id = 0;
+}
 
+function cargarLista(array){
+    array.forEach(function(item){
+        agregarTarea(item.tarea,item.check,item.eliminado,item.id);
+    })
+}
